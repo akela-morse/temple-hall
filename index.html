@@ -3,37 +3,24 @@
 
 <head>
 	<meta charset="UTF-8">
-	<meta property="og:title" content="">
-	<meta property="og:description" content="">
-	<meta property="og:image" content="">
+	<meta property="og:title" content="Explore this Temple">
+	<meta property="og:description" content="Launch Temple Maker 64 now and explore this Temple">
+	<meta property="og:image" content="https://akela-morse.github.io/temple-hall/embed.jpg">
+	<meta property="og:image:width" content="1200">
+	<meta property="og:image:height" content="630">
 	<meta property="og:type" content="article">
 	<meta property="og:site_name" content="Temple Maker 64">
+	<meta property="og:locale" content="en_US">
 	<link rel="icon" type="image/x-icon" href="favicon.ico">
 	<title>Entering a Temple...</title>
 	<script>
-		const metas = Array.from(document.getElementsByTagName('meta'));
+		const url = new URL(window.location.href);
 
-		const metaTitle = metas.find(m => m.attributes[0].nodeValue === 'og:title');
+		const templeId = url.searchParams.get("id");
 
-		const metaImage = metas.find(m => m.attributes[0].nodeValue === 'og:image');
+		window.location.replace("temple64:" + templeId);
 
-		const metaDescription = metas.find(m => m.attributes[0].nodeValue === 'og:description');
-
-		setTimeout(() => {
-
-			metaTitle.attributes[1].nodeValue = 'a title';
-			metaDescription.attributes[1].nodeValue = 'a description';
-			metaImage.attributes[1].nodeValue = 'a image';
-
-		}, 4000);
-
-		// const url = new URL(window.location.href);
-
-		// const templeId = url.searchParams.get("id");
-
-		// window.location.replace("temple64:" + templeId);
-
-		// setTimeout(window.close, 10000);
+		setTimeout(window.close, 10000);
 	</script>
 	<noscript>
 		<style>
@@ -98,7 +85,7 @@
 		</p>
 		<noscript>
 			<p>
-				Javascript disabled, you must <a href="temple64://">enter manually</a>
+				Javascript disabled, you must <a href="temple64:noid">enter manually</a>
 			</p>
 		</noscript>
 	</div>
