@@ -2,84 +2,93 @@
 <html lang="en-US">
 
 <head>
-    <meta charset="UTF-8">
-    <meta property="og:title" content="Explore this Temple">
-    <meta property="og:description" content="Launch Temple Maker 64 now and explore this Temple">
-    <meta property="og:image" content="https://akela-morse.github.io/temple-hall/embed.jpg">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:type" content="video.other">
-    <meta property="og:site_name" content="Temple Hall">
-    <meta property="og:locale" content="en_US">
-    <title>Entering a Temple...</title>
-    <script>window.location.replace("temple64://" + window.location.pathname.slice(1));</script>
-    <noscript>
-        <style>
-            .jsonly {
-                display: none !important;
-            }
-        </style>
-    </noscript>
-    <style>
-        @font-face {
-            font-family: 'Kelvinch';
-            src: url('kelv.otf') format('opentype');
-        }
+	<meta charset="UTF-8">
+	<meta property="og:title" content="Explore this Temple">
+	<meta property="og:description" content="Launch Temple Maker 64 now and explore this Temple">
+	<meta property="og:image" content="https://akela-morse.github.io/temple-hall/embed.jpg">
+	<meta property="og:image:width" content="1200">
+	<meta property="og:image:height" content="630">
+	<meta property="og:type" content="video.other">
+	<meta property="og:site_name" content="Temple Hall">
+	<meta property="og:locale" content="en_US">
+	<link rel="icon" type="image/x-icon" href="favicon.ico">
+	<title>Entering a Temple...</title>
+	<script>
+		var url = new URL(window.location.href);
 
-        @keyframes textAnim {
-            from {
-                opacity: 0;
-                letter-spacing: 0%;
-            }
+		var templeId = url.searchParams.get("id");
 
-            to {
-                opacity: 1;
-                letter-spacing: 5%;
-            }
-        }
+		window.location.replace("temple64:" + templeId);
 
-        body {
-            background-color: darkslategray;
-            background-image: url('background.jpg');
-            background-size: cover;
-        }
+		setTimeout(window.close, 10000);
+	</script>
+	<noscript>
+		<style>
+			.jsonly {
+				display: none !important;
+			}
+		</style>
+	</noscript>
+	<style>
+		@font-face {
+			font-family: 'Kelvinch';
+			src: url('kelv.otf') format('opentype');
+		}
 
-        div {
-            height: 100%;
-            width: 100%;
-            display: flex;
-            position: fixed;
-            align-items: center;
-            justify-content: center;
-        }
+		@keyframes textAnim {
+			from {
+				opacity: 0;
+				letter-spacing: 0%;
+			}
 
-        p {
-            color: whitesmoke;
-            font: 700 4em 'Kelvinch';
-            text-align: center;
-            text-shadow: 0 -2px 10px #ff0, 0 -10px 20px #ff8000, 0 -18px 40px #F00, 0px 0px 20px #000000, 0px 0px 20px #000000;
-            animation-name: textAnim;
-            animation-duration: 2s;
-            animation-fill-mode: forwards;
-        }
+			to {
+				opacity: 1;
+				letter-spacing: 5%;
+			}
+		}
 
-        a {
-            color: whitesmoke;
-        }
-    </style>
+		body {
+			background-color: darkslategray;
+			background-image: url('background.jpg');
+			background-size: cover;
+		}
+
+		div {
+			height: 100%;
+			width: 100%;
+			display: flex;
+			position: fixed;
+			align-items: center;
+			justify-content: center;
+		}
+
+		p {
+			color: whitesmoke;
+			font: 700 4em 'Kelvinch';
+			text-align: center;
+			text-shadow: 0 -2px 10px #ff0, 0 -10px 20px #ff8000, 0 -18px 40px #F00, 0px 0px 20px #000000, 0px 0px 20px #000000;
+			animation-name: textAnim;
+			animation-duration: 2s;
+			animation-fill-mode: forwards;
+		}
+
+		a {
+			color: whitesmoke;
+		}
+	</style>
 </head>
 
 <body>
-    <div>
-        <p class="jsonly">
-            Prepare to enter the Temple
-        </p>
-        <noscript>
-            <p>
-                Javascript disabled, you must <a href="temple64://">enter manually</a>
-            </p>
-        </noscript>
-    </div>
+	<div>
+		<p class="jsonly">
+			Prepare to enter the Temple
+		</p>
+		<noscript>
+			<p>
+				Javascript disabled, you must <a href="temple64://">enter manually</a>
+			</p>
+		</noscript>
+	</div>
 </body>
 
 </html>
