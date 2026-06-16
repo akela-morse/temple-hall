@@ -13,15 +13,6 @@
 	<meta property="og:locale" content="en_US">
 	<link rel="icon" type="image/x-icon" href="favicon.ico">
 	<title>Entering a Temple...</title>
-	<script>
-		const url = new URL(window.location.href);
-
-		const templeId = url.searchParams.get("id");
-
-		window.location.replace("temple64:" + templeId);
-
-		setTimeout(window.close, 10000);
-	</script>
 	<noscript>
 		<style>
 			.jsonly {
@@ -48,7 +39,7 @@
 		}
 
 		body {
-			background-color: darkslategray;
+			background-color: #2f2620;
 			background-image: url('background.jpg');
 			background-size: cover;
 		}
@@ -89,6 +80,16 @@
 			</p>
 		</noscript>
 	</div>
+
+	<script>
+		const url = new URL(window.location.href);
+
+		const templeId = url.searchParams.get("id");
+
+		window.location.replace("temple64:" + templeId);
+
+		setTimeout(window.close, 10000);
+	</script>
 </body>
 
 </html>
